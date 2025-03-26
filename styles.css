@@ -68,15 +68,31 @@ nav ul li a {
 }
 
 /* 리뷰 섹션 */
+#reviews {
+    margin-top: 100px; /* 상단 여백을 50px로 설정 */
+}
 #review-list {
     margin-top: 10px;
 }
-.review-item {
+#review-item {
     border-bottom: 1px solid #ddd;
     padding: 10px;
 }
+#review-input {
+    width: 600px; 
+    height: 30px; 
+    padding: 5px; 
+    font-size: 14px; 
+}
+#reviews button {
+    margin-top: 50px; /* 버튼 위쪽 여백을 설정 */
+}
 
 /* 문의 폼 */
+
+#contact {
+    margin-top: 100px; 
+}
 form {
     display: flex;
     flex-direction: column;

@@ -20,6 +20,7 @@
                 <li><a href="#services">서비스</a></li>
                 <li><a href="#reviews">고객 리뷰</a></li>
                 <li><a href="#contact">문의하기</a></li>
+                <li><a href="#login">로그인</a></li>
             </ul>
         </nav>
     </header>
@@ -52,11 +53,21 @@
             <p>세탁 및 다림질 배달 서비스</p>
             <button onclick="bookService('세탁 및 다림질')">예약하기</button>
         </div>
+        <div class="service">
+            <img src="images/cleaning4.jpg" alt="그 외">
+            <h3>그 외</h3>
+            <p>기타(추가사항)</p>
+            <button onclick="bookService('그 외')">예약하기</button>
+        </div>
     </div>
 </section>
+
     <!-- 고객 리뷰 -->
     <section id="reviews">
         <h2>고객 리뷰</h2>
+                <!-- 여기서 리뷰 목록을 동적으로 추가할 수 있습니다 -->
+                <div id="review-item">첫 번째 리뷰 내용</div>
+                <div id="review-item">두 번째 리뷰 내용</div>
         <div id="review-list"></div>
         <input type="text" id="review-input" placeholder="리뷰를 입력하세요">
         <button onclick="addReview()">리뷰 남기기</button>
