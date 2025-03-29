@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLEAN4U 가정 청소 예약 페이지</title>
+    <link rel="stylesheet" href="css/reservation_styles.css">
+</head>
+<body>
+
+    <!-- 네비게이션 바 -->
+    <header>
+        <div class="logo">CLEAN4U</div>
+        <nav>
+            <ul>
+                <li><a href="#home">홈</a></li>
+                <li><a href="#services">서비스</a></li>
+                <li><a href="#reviews">고객 리뷰</a></li>
+                <li><a href="#contact">문의하기</a></li>
+                <li><a href="#login">로그인</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="roomimg">
+        <img src="img/livingroom.png" alt="거실 이미지">
+        <div class="svgscroll">
+            <svg width="30" height="18" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.916343 1.4165L10.9072 10.5832L21.083 1.4165" stroke="white" stroke-width="3"></path>
+                </svg>
+        </div>
+    </div>
+
+    <div class="container">
+        <section id="section1" class="section" style="background-color: #F2F2F2;">
+            <h1>우리집 청소</h1>
+            <p>내가 필요한 만큼 선택해서 예약하세요.</p>
+            <div class="service-type">
+                <div class="service-card" onclick="scrollToSection('services')">
+                    <h2>1회 청소</h2>
+                    <p>필요한 날짜와 시간에 예약하면 기본 청소 범위 내에서 서비스를 진행합니다.</p>
+                </div>
+                <div class="service-card" onclick="scrollToSection('services')">
+                    <h2>정기 청소</h2>
+                    <p>정기적으로 방문하여 우리집을 관리하며 1회 청소보다 할인된 가격에 이용 가능합니다.</p>
+                </div>
+                <div class="service-card" onclick="scrollToSection('services')">
+                    <h2>구역 청소</h2>
+                    <p>화장실 또는 냉장실을 선택하여 합리적인 비용으로 청소를 받을 수 있습니다.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="section2" class="section" style="background-color: #F2F2F2;">
+            <h2>구역 청소</h2>
+            <p>원하는 구역을 선택해 청소</p>
+            <div class="service-options">
+                <div class="option-card">거실</div>
+                <div class="option-card">주방</div>
+                <div class="option-card">화장실</div>
+                <div class="option-card">현관</div>
+                <div class="option-card">베란다</div>
+            </div>
+        </section>
+
+
+        <section id="section3" class="section" style="background-color: #F2F2F2;">
+            <h2>추가 서비스</h2>
+            <p>다음 옵션 중 선택하세요.</p>
+            <div class="laundry-options">
+                <div class="option-card">세탁</div>
+                <div class="option-card">다림질</div>
+                <div class="option-card">쓰레기 배출</div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>© Clean4U. All rights reserved.</p>
+        <p>믿고 맡기는 청소 서비스</p>
+    </footer>
+
+    <script src="js/reservation_script.js"></script>
+</body>
+</html>
