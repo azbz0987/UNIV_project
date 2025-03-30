@@ -18,6 +18,7 @@
             <ul>
                 <li><a href="#home">홈</a></li>
                 <li><a href="#services">서비스</a></li>
+                <li><a href="#features">특별함</a></li>
                 <li><a href="#reviews">고객 리뷰</a></li>
                 <li><a href="#contact">문의하기</a></li>
                 <li><a href="#login">로그인</a></li>
@@ -36,7 +37,10 @@
         </div>
     </div>
 
-    <div class="overlay-text">1인가구를 위한 룸 서비스 <br> ALL IN HOME</div>
+    <div class="overlay-text">
+        1인가구를 위한 룸 서비스 <br>ALL IN HOME<br>
+        <a href="#contact" class="btn">무료 상담 신청</a>
+    </div>
 
     
 
@@ -76,29 +80,140 @@
         </div>
     </div>
 </section>
+<div class="container">
+        <!-- 특별함 섹션 -->
+        <section id="features" class="section">
+            <h2>ALL IN HOME의 특별함</h2>
+            <p>1인 가구를 위한 맞춤형 서비스</p>
+            <div class="features-container">
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h3>1인 가구 맞춤형</h3>
+                            <p>1인 가구의 생활 패턴과 공간에 최적화된 서비스를 제공합니다.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>24시간 새벽 서비스</h3>
+                            <p>언제든지 필요할 때 서비스를 받을 수 있습니다.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div>
+                            <h3>챌린지 & 포인트 시스템</h3>
+                            <p>직접 청소에 참여하고 포인트를 적립하여 다음 서비스에 사용할 수 있습니다.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div>
+                            <h3>실시간 채팅 지원</h3>
+                            <p>서비스 제공자와 실시간으로 소통하며 필요한 사항을 즉시 전달할 수 있습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- 고객 리뷰 -->
-    <section id="reviews">
-        <h2>고객 리뷰</h2>
-                <!-- 여기서 리뷰 목록을 동적으로 추가할 수 있습니다 -->
-                <div id="review-item">첫 번째 리뷰 내용</div>
-                <div id="review-item">두 번째 리뷰 내용</div>
-        <div id="review-list"></div>
-        <input type="text" id="review-input" placeholder="리뷰를 입력하세요">
-        <button onclick="addReview()">리뷰 남기기</button>
-    </section>
+<!-- 고객 리뷰 섹션 -->
+<section id="reviews" class="section">
+    <h2>고객 리뷰</h2>
+    <p>고객님들의 솔직한 후기</p>
+    <div class="reviews">
+        <div class="review-item">
+            <p>"바쁜 직장 생활 중에도 깨끗한 집에서 지낼 수 있어 너무 좋아요. 특히 모닝콜 서비스는 정말 획기적이에요!"</p>
+            <p style="text-align: right; margin-top: 10px; font-weight: 500;">- 김영희, 직장인</p>
+        </div>
+        <div class="review-item">
+            <p>"정기적으로 이용하고 있는데, 매번 깔끔하게 청소해주셔서 만족스럽습니다. 챌린지 시스템도 재미있어요."</p>
+            <p style="text-align: right; margin-top: 10px; font-weight: 500;">- 이철수, 프리랜서</p>
+        </div>
+        <div class="review-item">
+            <p>"혼자 살면서 청소하기가 정말 힘들었는데, ALL IN HOME 덕분에 항상 깨끗한 환경에서 생활할 수 있게 되었어요."</p>
+            <p style="text-align: right; margin-top: 10px; font-weight: 500;">- 박지민, 대학원생</p>
+        </div>
+    </div>
+</section>
 
-    <!-- 문의 폼 -->
-    <section id="contact">
+    <!-- 문의 폼 섹션 -->
+    <section id="contact" class="section">
         <h2>문의하기</h2>
-        <form id="contact-form">
-            <input type="text" id="name" placeholder="이름" required>
-            <input type="email" id="email" placeholder="이메일" required>
-            <textarea id="message" placeholder="문의 내용을 입력하세요" required></textarea>
-            <button type="submit">문의 보내기</button>
+        <p>궁금한 점이 있으신가요?</p>
+        <form class="contact-form">
+            <input type="text" placeholder="이름" required>
+            <input type="email" placeholder="이메일" required>
+            <input type="tel" placeholder="전화번호" required>
+            <textarea placeholder="문의 내용을 입력하세요" required></textarea>
+            <button type="submit" class="btn">문의 보내기</button>
         </form>
     </section>
+</div>
 
     <script src="js/script.js"></script>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <p>© ALL IN HOME. All rights reserved.</p>
+        <p>당신의 공간을 더 특별하게 만들어 드립니다</p>
+    </footer>
+
+    <script>
+        // 스크롤 시 헤더 배경색 변경
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // 섹션 스크롤 기능
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                window.scrollTo({
+                    top: section.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        // 스크롤 이벤트 리스너
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+            });
+        });
+        
+        // 옵션 카드 이벤트 리스너
+        document.querySelectorAll('.option-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.classList.toggle('selected');
+            });
+        });
+        
+        // 연락처 폼 제출 이벤트
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('문의가 성공적으로 접수되었습니다. 빠른 시일 내에 답변 드리겠습니다.');
+            this.reset();
+        });
+    </script>
+
 </body>
 </html>
