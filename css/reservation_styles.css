@@ -102,6 +102,10 @@ nav ul li a {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
+.section p {
+    margin-bottom: 25px;
+}
+
 h1, h2 {
     margin-bottom: 20px;
 }
