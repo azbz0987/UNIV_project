@@ -32,7 +32,7 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: transparent; /* 기본 배경색 투명 */
-    padding: 15px 5%;
+    padding: 15px 15%;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;

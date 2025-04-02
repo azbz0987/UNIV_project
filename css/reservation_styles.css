@@ -12,7 +12,7 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: transparent; /* 기본 배경색 투명 */
-    padding: 15px 400px;
+    padding: 15px 15%;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;
@@ -24,14 +24,24 @@ header {
 }
 header.scrolled {
     background-color: #A4D8F4;
-    color: white; 
-    text-shadow: none;
-    
+    color: white;     
 }
 header:hover {
     background-color: #A4D8F4; 
     color: white; 
-    text-shadow: none;
+}
+.logo {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #3498db;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+.logo img {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
 }
 
 #roomimg {
