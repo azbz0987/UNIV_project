@@ -11,3 +11,9 @@ window.addEventListener('scroll', function() {
         header.classList.remove('scrolled');
     }
 });
+
+function toggleMenu() {
+    const navUl = document.querySelector("nav ul");
+    navUl.classList.toggle("show");
+}
+
