@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>클린포유 가정 청소 예약 페이지</title>
     <link rel="stylesheet" href="reservation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <!-- 네비게이션 바 -->
     <header>
         <div class="logo">
-            <img src="logo.png" alt="클린포유 로고">
+            <img src="img/logo.png" alt="클린포유 로고">
             <div>CLEAN4U</div>
         </div>
         <nav>
@@ -27,7 +28,7 @@
     </header>
     
     <div id="roomimg">
-        <img src="oneroom2.png" alt="거실 이미지">
+        <img src="img/oneroom2.png" alt="거실 이미지">
         <div>
             <span data-br=":R3k6776:">
                 <h1 class="logotext">나를 위한 선택</h1>
@@ -107,77 +108,108 @@
         </section>
         
         <!-- 예약 폼 섹션 -->
-        <section id="reservation" class="section" style="background-color: #F2F2F2;">
-            <h2 id="size">청소 서비스 예약</h2>
-            <p id="size2">간편하게 예약하고 맞춤형 서비스를 받아보세요</p>
-            
-            <form id="booking-form" class="booking-form">
-                <div class="form-group">
-                    <label for="service-type">서비스 유형</label>
-                    <select id="service-type" name="service-type" required>
-                        <option value="" disabled selected>서비스 유형 선택</option>
-                        <option value="one-time">1회 청소</option>
-                        <option value="regular">정기 청소</option>
-                        <option value="area">구역 청소</option>
-                    </select>
+        <!-- 예약 폼 섹션 -->
+        <section id="reservation" class="section">
+            <div class="reservation-container">
+                <div class="section-header">
+                    <h2>청소 서비스 예약</h2>
+                    <p>간편하게 예약하고 맞춤형 서비스를 받아보세요</p>
                 </div>
                 
-                <div class="form-row">
+                <form id="booking-form" class="booking-form">
                     <div class="form-group">
-                        <label for="date">예약 날짜</label>
-                        <input type="date" id="date" name="date" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="time">예약 시간</label>
-                        <select id="time" name="time" required>
-                            <option value="" disabled selected>시간 선택</option>
-                            <option value="09:00">오전 9시</option>
-                            <option value="10:00">오전 10시</option>
-                            <option value="11:00">오전 11시</option>
-                            <option value="13:00">오후 1시</option>
-                            <option value="14:00">오후 2시</option>
-                            <option value="15:00">오후 3시</option>
+                        <label for="service-type">서비스 유형</label>
+                        <select id="service-type" name="service-type" required>
+                            <option value="" disabled selected>서비스 유형 선택</option>
+                            <option value="one-time">1회 청소</option>
+                            <option value="regular">정기 청소</option>
+                            <option value="area">구역 청소</option>
                         </select>
+                        <div class="icon-select"><i class="fas fa-chevron-down"></i></div>
                     </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="address">주소</label>
-                    <input type="text" id="address" name="address" placeholder="주소를 입력하세요" required>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">이름</label>
-                        <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">예약 날짜</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="time">예약 시간</label>
+                            <select id="time" name="time" required>
+                                <option value="" disabled selected>시간 선택</option>
+                                <option value="09:00">오전 9시</option>
+                                <option value="10:00">오전 10시</option>
+                                <option value="11:00">오전 11시</option>
+                                <option value="13:00">오후 1시</option>
+                                <option value="14:00">오후 2시</option>
+                                <option value="15:00">오후 3시</option>
+                            </select>
+                            <div class="icon-select"><i class="fas fa-chevron-down"></i></div>
+                        </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="phone">연락처</label>
-                        <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" required>
+                        <label for="address">주소</label>
+                        <input type="text" id="address" name="address" placeholder="주소를 입력하세요" required>
                     </div>
-                </div>
-                
-                <div class="form-group">
-                    <label>추가 서비스 (선택사항)</label>
-                    <div class="checkbox-group">
-                        <label><input type="checkbox" name="additional" value="fridge"> 냉장고 청소</label>
-                        <label><input type="checkbox" name="additional" value="window"> 창틀 청소</label>
-                        <label><input type="checkbox" name="additional" value="laundry"> 세탁</label>
-                        <label><input type="checkbox" name="additional" value="ironing"> 다림질</label>
-                        <label><input type="checkbox" name="additional" value="trash"> 쓰레기 배출</label>
-                        <label><input type="checkbox" name="additional" value="alarm"> 기상 알림</label>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">이름</label>
+                            <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">연락처</label>
+                            <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" required>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">요청사항</label>
-                    <textarea id="message" name="message" placeholder="특별한 요청사항이 있으시면 알려주세요" rows="4"></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">예약하기</button>
-            </form>
+                    
+                    <div class="form-group">
+                        <label>추가 서비스 (선택사항)</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="additional" value="fridge">
+                                <span class="checkmark"></span>
+                                <span>냉장고 청소</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="additional" value="window">
+                                <span class="checkmark"></span>
+                                <span>창틀 청소</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="additional" value="laundry">
+                                <span class="checkmark"></span>
+                                <span>세탁</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="additional" value="ironing">
+                                <span class="checkmark"></span>
+                                <span>다림질</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="additional" value="trash">
+                                <span class="checkmark"></span>
+                                <span>쓰레기 배출</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="additional" value="alarm">
+                                <span class="checkmark"></span>
+                                <span>기상 알림</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">요청사항</label>
+                        <textarea id="message" name="message" placeholder="특별한 요청사항이 있으시면 알려주세요" rows="4"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">예약하기</button>
+                </form>
+            </div>
         </section>
         
         <!-- 자주 묻는 질문 섹션 -->
