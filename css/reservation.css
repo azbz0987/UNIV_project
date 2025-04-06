@@ -645,6 +645,7 @@ h1, h2 {
     margin: 0;
     padding: 15px 0;
     color: #666;
+    text-align:left;
 }
 
 .faq-item.active .faq-toggle {
