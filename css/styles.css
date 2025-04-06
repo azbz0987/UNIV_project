@@ -277,7 +277,13 @@ nav ul li a:hover {
     color: #666;
 }
 
-.service button {
+.button-container {
+    display: flex; /* Flexbox 사용 */
+    justify-content: center; /* 수평 가운데 정렬 */
+    
+}
+
+#reservationButton {
     margin-bottom: 20px;
     background-color: #3498db;
     color: white;
@@ -288,7 +294,7 @@ nav ul li a:hover {
     transition: background-color 0.3s, border-color 0.3s;
 }
 
-.service button:hover {
+#reservationButton {
     background-color: #2980b9;
 }
 
