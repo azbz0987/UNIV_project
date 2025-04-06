@@ -398,3 +398,83 @@ h2 {
         font-size: 2rem;
     }
 }
+
+/* 사용자 메뉴 스타일 */
+.user-menu {
+    position: relative;
+    cursor: pointer;
+    padding:  0;
+    display: flex;
+    align-items: center;
+    color: #efeaea; /* 네비게이션 메뉴 색상과 일치 */
+    height: 100%;
+}
+
+.user-name {
+    font-weight: 500;
+    display: inline-block;
+    padding-right: 20px;
+    position: relative;
+}
+
+.user-name::after {
+    content: '▼';
+    font-size: 0.7em;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s;
+}
+
+.user-menu.active .user-name::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s;
+    z-index: 1001;
+}
+
+.user-menu.active .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: #333 !important;
+    text-decoration: none;
+    border-bottom: 1px solid #f1f1f1;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f9f9f9;
+    color: #3498db !important;
+}
+
+/* 로그아웃 버튼 특별 스타일 */
+#logout-button {
+    color: #e74c3c !important;
+}
+
+#logout-button:hover {
+    background-color: #ffe6e6;
+}

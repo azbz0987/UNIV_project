@@ -156,3 +156,107 @@ style.textContent = `
 `;
 
 document.head.appendChild(style);
+
+// 로그인 상태 확인 및 UI 업데이트 함수
+function checkLoginStatus() {
+    // 로컬 스토리지에서 사용자 데이터 가져오기
+    const userDataStr = localStorage.getItem('userData');
+    
+    if (userDataStr) {
+        try {
+            const userData = JSON.parse(userDataStr);
+            
+            // 로그인 상태이면 네비게이션 메뉴 업데이트
+            if (userData.isLoggedIn) {
+                updateNavigationForLoggedIn(userData);
+                return true;
+            }
+        } catch (error) {
+            console.error('사용자 데이터 파싱 오류:', error);
+            // 오류 발생 시 로컬 스토리지 데이터 삭제
+            localStorage.removeItem('userData');
+        }
+    }
+    
+    // 로그인 상태가 아니거나 오류 발생 시 기본 네비게이션 표시
+    updateNavigationForLoggedOut();
+    return false;
+}
+
+// 로그인 상태일 때 네비게이션 업데이트
+function updateNavigationForLoggedIn(userData) {
+    const navList = document.querySelector('nav ul');
+    
+    // 로그인 메뉴 아이템 찾기
+    const loginItem = navList.querySelector('li:last-child');
+    
+    if (loginItem) {
+        // 로그인 메뉴 대신 드롭다운 메뉴로 변경
+        loginItem.innerHTML = `
+            <div class="user-menu">
+                <span class="user-name">${userData.name}</span>
+                <div class="dropdown-menu">
+                    <a href="mypage.html">마이페이지</a>
+                    <a href="reservations.html">예약 내역</a>
+                    <a href="#" id="logout-button">로그아웃</a>
+                </div>
+            </div>
+        `;
+        
+        // 로그아웃 버튼에 이벤트 리스너 추가
+        const logoutButton = document.getElementById('logout-button');
+        if (logoutButton) {
+            logoutButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                logout();
+            });
+        }
+        
+        // 사용자 메뉴 드롭다운 토글 이벤트 추가
+        const userMenu = document.querySelector('.user-menu');
+        if (userMenu) {
+            userMenu.addEventListener('click', function(e) {
+                this.classList.toggle('active');
+            });
+            
+            // 문서 클릭 시 드롭다운 메뉴 닫기
+            document.addEventListener('click', function(e) {
+                if (!userMenu.contains(e.target)) {
+                    userMenu.classList.remove('active');
+                }
+            });
+        }
+    }
+}
+
+// 로그아웃 상태일 때 네비게이션 업데이트
+function updateNavigationForLoggedOut() {
+    const navList = document.querySelector('nav ul');
+    const lastItem = navList.querySelector('li:last-child');
+    
+    // 마지막 항목이 로그인 버튼이 아니면 변경
+    if (lastItem && lastItem.querySelector('a').getAttribute('href') !== 'login.html') {
+        lastItem.innerHTML = '<a href="login.html">로그인</a>';
+    }
+}
+
+// 로그아웃 함수
+function logout() {
+    // 로컬 스토리지에서 사용자 데이터 삭제
+    localStorage.removeItem('userData');
+    
+    // 네비게이션 업데이트
+    updateNavigationForLoggedOut();
+    
+    alert('로그아웃되었습니다.');
+    
+    // 홈페이지로 리다이렉트
+    window.location.href = 'index.html';
+}
+
+// 페이지 로드 시 로그인 상태 확인
+document.addEventListener('DOMContentLoaded', function() {
+    // 기존 DOMContentLoaded 이벤트 핸들러가 있으므로 주의 필요
+    // 로그인 상태 확인 및 UI 업데이트
+    checkLoginStatus();
+});
