@@ -13,7 +13,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: transparent; /* 기본 배경색 투명 */
+    background-color: transparent;
     padding: 15px 15%;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
@@ -21,67 +21,77 @@ header {
     left: 0;
     right: 0;
     z-index: 1000;
-    color: black; 
-    transition: background-color 0.3s, color 0.3s; 
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
 }
-/* 네비게이션 메뉴 항목 글자 간격 */
+
 nav ul li a {
-    letter-spacing: 1.5px; /* 글자 간격 조정 */
-    font-weight: 500; /* 글자 두께 */
+    letter-spacing: 1.5px;
+    font-weight: 500;
 }
 
-/* 메뉴 항목 사이 간격 */
 nav ul li {
-    margin-left: 25px; /* 메뉴 항목 사이 간격 늘림 */
+    margin-left: 25px;
 }
 
-/* 로고 텍스트 글자 간격 */
 .logo div {
-    letter-spacing: 2px; /* 로고 텍스트 글자 간격 */
+    letter-spacing: 2px;
 }
 
 header.scrolled {
     background-color: #A4D8F4;
-    color: white;     
+    color: white;
 }
+
 header:hover {
-    background-color: #A4D8F4; 
-    color: white; 
+    background-color: #A4D8F4;
+    color: white;
 }
+
 .logo {
-    font-size: 1.8em;
+    /* font-size: 1.8em;
     font-weight: 600;
-    color: #3498db;
+    color: white;
     display: flex;
     align-items: center;
-    white-space: nowrap;
+    white-space: nowrap; */
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
 }
+
 .logo img {
     height: 40px;
-    /* width: auto; */
     margin-right: 10px;
 }
 
 nav ul {
     display: flex;
     list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+    flex-wrap: nowrap;
 }
 
 nav ul li {
-    margin-left: 20px;
+    display: inline;
 }
 
 nav ul li a {
+    color: white;
     text-decoration: none;
-    color: #efeaea;
     font-weight: 500;
+    font-size: 0.95em; /* 글씨 크기 축소 */
+    padding: 6px 5px; /* 상하/좌우 간격 축소 */
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
     color: #3498db;
 }
-
 
 #roomimg {
     width: 100%;
@@ -92,19 +102,19 @@ nav ul li a:hover {
 
 #roomimg img {
     width: 100%;
-    height: 100%; /* 비율을 유지하면서 높이에 맞게 조정 */
-    object-fit: cover; /* 이미지 비율 유지 */
-    position: absolute; /* 이미지 위치를 절대적으로 설정 */
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* 중앙 정렬을 위한 변환 */
+    transform: translate(-50%, -50%);
 }
 
 .logotext {
     position: absolute;
     top: 30%;
     left: 21%;
-    transform: translate(-50%, -50%); /* 정확한 중앙 정렬 */
+    transform: translate(-50%, -50%);
     display: inline-block;
     text-decoration: inherit;
     max-width: 540px;
@@ -112,39 +122,77 @@ nav ul li a:hover {
     font-size: 3em;
     font-weight: bold;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-    text-align: left; /* 왼쪽 정렬 */
-    white-space: nowrap; /* 줄바꿈 방지 */
+    text-align: left;
+    white-space: nowrap;
 }
-/* 태블릿 */
+
 @media (max-width: 1024px) {
-    .logotext {
-        top: 35%; /* 화면 작아지면 조금 아래로 조정 */
-        left: 30%; /* 중앙에 가까워지도록 조정 */
-        font-size: 2.5em; /* 크기 줄이기 */
+    header {
+        padding: 10px 10%;
     }
-}
-/* 모바일 */
-@media (max-width: 768px) {
+
+    .logo {
+        font-size: 1.6em;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 8px 15px;
+    }
+
     .logotext {
-        top: 40%; /* 모바일에서는 더 아래로 */
-        left: 50%; /* 가운데 정렬 */
-        transform: translate(-50%, -50%); /* 정확한 중앙 위치 */
-        font-size: 2em; /* 글자 크기 줄이기 */
-        text-align: center; /* 중앙 정렬 */
-        white-space: normal; /* 줄바꿈 허용 */
-        width: 90%; /* 글자가 너무 길어질 경우 대비 */
+        top: 35%;
+        left: 30%;
+        font-size: 2.5em;
+        transform: translate(-50%, -50%);
+        white-space: nowrap;
+        text-align: left;
     }
 }
 
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 5px 10px;
+    }
+
+    .logotext {
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2em;
+        text-align: center;
+        white-space: normal;
+        width: 90%;
+    }
+}
 
 .svgscroll {
     position: absolute;
-    bottom: 10px; /* 이미지 하단에 배치 */
+    bottom: 10px;
     left: 50%;
-    transform: translateX(-50%); /* 가운데 정렬 */
+    transform: translateX(-50%);
     cursor: pointer;
-    animation: bounce 1.5s infinite; /* 부드러운 애니메이션 추가 */
+    animation: bounce 1.5s infinite;
 }
+
 @keyframes bounce {
     0%, 100% {
         transform: translateX(-50%) translateY(0);
@@ -154,85 +202,6 @@ nav ul li a:hover {
     }
 }
 
-.logo {
-    font-size: 1.8em;
-    font-weight: 600;
-    color: white;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
-    flex-wrap: nowrap;
-}
-nav ul li {
-    display: inline;
-}
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1.1em;
-    padding: 10px 15px;
-    /* text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); */
-}
-.menu-toggle {
-    display: none;
-    font-size: 2em;
-    position: absolute;
-    top: 15px;
-    right: 15%;
-    cursor: pointer;
-    color: black;
-}
-@media (max-width: 768px) {
-    .logotext {
-        white-space: normal; /* 모바일에서 줄바꿈 허용 */
-        width: 90%;
-        text-align: center;
-    }
-
-    .menu-toggle {
-        display: block; /* 모바일에서 햄버거 버튼 표시 */
-    }
-
-    nav ul {
-        display: none; /* 기본적으로 숨김 */
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: #A4D8F4;
-        padding: 15px 0;
-        text-align: center;
-    }
-
-    nav ul.show {
-        display: flex; /* 버튼 클릭 시 표시 */
-    }
-
-    nav ul li {
-        padding: 10px 0;
-    }
-    
-    .menu-toggle {
-        display: block;
-        cursor: pointer;
-    }
-}
-
-.menu-toggle {
-    display: none;
-    font-size: 2em;
-    position: absolute;
-    top: 15px;
-    right: 15%;
-    cursor: pointer;
-}
 
 
 /* 메인 컨테이너 */
