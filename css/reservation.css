@@ -24,6 +24,22 @@ header {
     color: black; 
     transition: background-color 0.3s, color 0.3s; 
 }
+/* 네비게이션 메뉴 항목 글자 간격 */
+nav ul li a {
+    letter-spacing: 1.5px; /* 글자 간격 조정 */
+    font-weight: 500; /* 글자 두께 */
+}
+
+/* 메뉴 항목 사이 간격 */
+nav ul li {
+    margin-left: 25px; /* 메뉴 항목 사이 간격 늘림 */
+}
+
+/* 로고 텍스트 글자 간격 */
+.logo div {
+    letter-spacing: 2px; /* 로고 텍스트 글자 간격 */
+}
+
 header.scrolled {
     background-color: #A4D8F4;
     color: white;     
@@ -42,9 +58,30 @@ header:hover {
 }
 .logo img {
     height: 40px;
-    width: auto;
+    /* width: auto; */
     margin-right: 10px;
 }
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #efeaea;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #3498db;
+}
+
 
 #roomimg {
     width: 100%;
