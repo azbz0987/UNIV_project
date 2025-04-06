@@ -315,6 +315,44 @@ h1, h2 {
 }
 
 /* 예약 폼 스타일 */
+/* 내 정보 불러오기 버튼 스타일 */
+.load-info-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.load-info-btn {
+    display: flex;
+    align-items: center;
+    background-color: #e9ecef;
+    color: #495057;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.load-info-btn i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+.load-info-btn:hover {
+    background-color: #dee2e6;
+    /* transform: translateY(-2px); */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.load-info-btn:active {
+    transform: translateY(0);
+}
+
 .booking-form {
     max-width: 800px;
     margin: 0 auto;
@@ -325,9 +363,10 @@ h1, h2 {
     transition: transform 0.3s ease;
 }
 
-.booking-form:hover {
+/* 입력칸  */
+/* .booking-form:hover {
     transform: translateY(-5px);
-}
+} */
 
 .form-group {
     margin-bottom: 25px;
