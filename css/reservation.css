@@ -1,11 +1,50 @@
 @charset "UTF-8";
 
+/* 기본 스타일 */
 body {
     font-family: 'Pretendard', sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
     background-color: #F9F9F9;
+}
+
+/* 공통 섹션 스타일 */
+.section {
+    background: white;
+    border-radius: 12px;
+    padding: 50px;
+    margin: 40px auto;
+    max-width: 1100px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* 타이포그래피 */
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+#size {
+    font-size: 1.8em;
+}
+
+#size2 {
+    font-size: 1.3em;
+}
+
+.section p {
+    margin-bottom: 25px;
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
 }
 
 /* 네비게이션 바 */
@@ -25,25 +64,7 @@ header {
     transition: background-color 0.3s, color 0.3s;
 }
 
-nav ul li a {
-    letter-spacing: 1.5px;
-    font-weight: 500;
-}
-
-nav ul li {
-    margin-left: 25px;
-}
-
-.logo div {
-    letter-spacing: 2px;
-}
-
-header.scrolled {
-    background-color: #A4D8F4;
-    color: white;
-}
-
-header:hover {
+header.scrolled, header:hover {
     background-color: #A4D8F4;
     color: white;
 }
@@ -61,6 +82,10 @@ header:hover {
     margin-right: 10px;
 }
 
+.logo div {
+    letter-spacing: 2px;
+}
+
 nav ul {
     display: flex;
     list-style: none;
@@ -72,21 +97,24 @@ nav ul {
 
 nav ul li {
     display: inline;
+    margin-left: 25px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    font-size: 1.1em; /* 글씨 크기 축소 */
-    padding: 6px 5px; /* 상하/좌우 간격 축소 */
+    font-size: 1.1em;
+    padding: 6px 5px;
     transition: color 0.3s;
+    letter-spacing: 1.5px;
 }
 
 nav ul li a:hover {
     color: #3498db;
 }
 
+/* 메인 이미지 배너 */
 #roomimg {
     width: 100%;
     height: 100vh;
@@ -120,64 +148,6 @@ nav ul li a:hover {
     white-space: nowrap;
 }
 
-@media (max-width: 1024px) {
-    header {
-        padding: 10px 10%;
-    }
-
-    .logo {
-        font-size: 1.6em;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    nav ul li {
-        margin: 8px 15px;
-    }
-
-    .logotext {
-        top: 35%;
-        left: 30%;
-        font-size: 2.5em;
-        transform: translate(-50%, -50%);
-        white-space: nowrap;
-        text-align: left;
-    }
-}
-
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        padding: 15px;
-    }
-
-    .logo {
-        margin-bottom: 15px;
-    }
-
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    nav ul li {
-        margin: 5px 10px;
-    }
-
-    .logotext {
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 2em;
-        text-align: center;
-        white-space: normal;
-        width: 90%;
-    }
-}
-
 .svgscroll {
     position: absolute;
     bottom: 10px;
@@ -196,32 +166,6 @@ nav ul li a:hover {
     }
 }
 
-
-
-/* 메인 컨테이너 */
-.container {
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.section {
-    background: white;
-    border-radius: 12px;
-    padding: 50px;
-    margin: 40px auto;
-    max-width: 1100px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* 더 부드러운 그림자 */
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.section p {
-    margin-bottom: 25px;
-    font-size: 1.1em;
-    color: #555;
-    line-height: 1.6;
-}
 /* 버튼 스타일 */
 .section .btn {
     display: inline-block;
@@ -234,21 +178,13 @@ nav ul li a:hover {
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
 .section .btn:hover {
     background-color: #92cde3;
     transform: scale(1.05);
 }
 
-h1, h2 {
-    margin-bottom: 20px;
-}
-#size {
-    font-size: 1.8em;
-}
-#size2{
-    font-size: 1.3em;
-}
-
+/* 서비스 카드 스타일 */
 .service-type, .service-options, .laundry-options {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -274,35 +210,48 @@ h1, h2 {
     transform: translateY(-5px);
 }
 
-.extra-card{
-    background-color: white;
-    color: #333;
-    padding: 20px;
-    border-radius: 12px;
-    transition: all 0.3s ease-in-out;
-    text-align: center;
-    font-size: 1.1em;
-    font-weight: 500;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 2px solid #A4D8F4;
-}
-
-.extra-card:hover {
-    background-color: #92cde3;
+.selected {
+    background-color: #3498db !important;
     transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* 푸터 */
-.footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9em;
-    color: #666;
-    background: #F2F2F2;
+/* 미제공 서비스 스타일 */
+.not-provided {
+    background-color: #f8f8f8;
+    border-left: 4px solid #ff6b6b;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 0 8px 8px 0;
 }
 
-/* ///////////////////////// 추가 ////////////////////////////// */
+.not-provided h3 {
+    color: #ff6b6b;
+    margin-top: 0;
+}
+
+.not-provided-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.not-provided-item {
+    background-color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+}
+
+.not-provided-item::before {
+    content: "✕";
+    color: #ff6b6b;
+    margin-right: 10px;
+    font-weight: bold;
+}
 
 /* 예약 폼 섹션 스타일 */
 #reservation {
@@ -333,7 +282,6 @@ h1, h2 {
     margin: 0 auto;
 }
 
-/* 예약 폼 스타일 */
 /* 내 정보 불러오기 버튼 스타일 */
 .load-info-container {
     display: flex;
@@ -364,7 +312,6 @@ h1, h2 {
 
 .load-info-btn:hover {
     background-color: #dee2e6;
-    /* transform: translateY(-2px); */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -372,6 +319,7 @@ h1, h2 {
     transform: translateY(0);
 }
 
+/* 예약 폼 스타일 */
 .booking-form {
     max-width: 800px;
     margin: 0 auto;
@@ -382,30 +330,18 @@ h1, h2 {
     transition: transform 0.3s ease;
 }
 
-/* 입력칸  */
-/* .booking-form:hover {
-    transform: translateY(-5px);
-} */
-
 .form-group {
     margin-bottom: 25px;
     position: relative;
-    width: 100%; /* 너비 100%로 설정 */
-    box-sizing: border-box; /* 패딩과 테두리를 너비에 포함 */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .form-row {
     display: flex;
     justify-content: space-between;
     gap: 25px;
-    width: 100%; /* 너비 100%로 설정 */
-}
-
-@media (max-width: 768px) {
-    .form-row {
-        flex-direction: column;
-        gap: 20px;
-    }
+    width: 100%;
 }
 
 .form-group label {
@@ -419,7 +355,7 @@ h1, h2 {
 .form-group input,
 .form-group select,
 .form-group textarea {
-    width: 100%; /* 모든 입력 필드를 100% 너비로 설정 */
+    width: 100%;
     padding: 14px 16px;
     border: 2px solid #e0e0e0;
     border-radius: 10px;
@@ -427,7 +363,8 @@ h1, h2 {
     font-size: 1rem;
     transition: all 0.3s ease;
     background-color: #f9f9f9;
-    box-sizing: border-box; /* 패딩과 테두리를 너비에 포함 */
+    box-sizing: border-box;
+    max-width: none;
 }
 
 .form-group input:focus,
@@ -467,7 +404,7 @@ h1, h2 {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 15px;
     margin-top: 10px;
-    width: 100%; /* 너비 100%로 설정 */
+    width: 100%;
 }
 
 .checkbox-container {
@@ -544,7 +481,7 @@ h1, h2 {
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(77, 171, 247, 0.2);
     margin-top: 10px;
-    box-sizing: border-box; /* 패딩과 테두리를 너비에 포함 */
+    box-sizing: border-box;
 }
 
 .submit-btn:hover {
@@ -557,99 +494,6 @@ h1, h2 {
     transform: translateY(0);
 }
 
-/* 반응형 조정 */
-@media (max-width: 576px) {
-    .booking-form {
-        padding: 25px;
-    }
-    
-    .section-header h2 {
-        font-size: 2rem;
-    }
-    
-    .section-header p {
-        font-size: 1rem;
-    }
-    
-    .checkbox-group {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* max-width 제거하여 입력 필드들이 일관된 너비를 가지도록 수정 */
-.form-group input,
-.form-group select,
-.form-group textarea {
-    max-width: none;
-}
-
-/* Font Awesome을 사용하기 위한 CDN 링크를 HTML에 추가해야 합니다 */
-
-/* 서비스 가격 테이블 스타일 */
-.price-table {
-    width: 100%;
-    margin: 30px 0;
-    border-collapse: collapse;
-}
-
-.price-table th,
-.price-table td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-.price-table th {
-    background-color: #A4D8F4;
-    color: white;
-    font-weight: 600;
-}
-
-.price-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.price-table tr:hover {
-    background-color: #f1f1f1;
-}
-
-/* 미제공 서비스 스타일 */
-.not-provided {
-    background-color: #f8f8f8;
-    border-left: 4px solid #ff6b6b;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 0 8px 8px 0;
-}
-
-.not-provided h3 {
-    color: #ff6b6b;
-    margin-top: 0;
-}
-
-.not-provided-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
-    margin-top: 15px;
-}
-
-.not-provided-item {
-    background-color: #fff;
-    padding: 12px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    display: flex;
-    align-items: center;
-}
-
-.not-provided-item::before {
-    content: "✕";
-    color: #ff6b6b;
-    margin-right: 10px;
-    font-weight: bold;
-}
-
 /* 동적 옵션 애니메이션 효과 */
 #regular-options, #area-options {
     overflow: hidden;
@@ -660,10 +504,10 @@ h1, h2 {
 
 #regular-options.visible, #area-options.visible {
     opacity: 1;
-    max-height: 500px; /* 충분히 큰 값 */
+    max-height: 500px;
 }
 
-/* 구역 선택 체크박스 그룹 스타일 보완 */
+/* 구역 선택 체크박스 그룹 스타일 */
 #area-options .checkbox-group {
     margin-top: 15px;
 }
@@ -721,7 +565,7 @@ h1, h2 {
     margin: 0;
     padding: 15px 0;
     color: #666;
-    text-align:left;
+    text-align: left;
 }
 
 .faq-item.active .faq-toggle {
@@ -732,13 +576,7 @@ h1, h2 {
     max-height: 200px;
 }
 
-/* 추가 스타일 */
-.selected {
-    background-color: #3498db !important;
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
+/* 유효성 검사 및 확인 메시지 스타일 */
 .error {
     border-color: #ff6b6b !important;
 }
@@ -758,8 +596,94 @@ h1, h2 {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* 반응형 디자인 추가 개선 */
-/* @media (max-width: 768px) {
+/* 푸터 스타일 */
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #666;
+    background: #F2F2F2;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+    header {
+        padding: 10px 10%;
+    }
+
+    .logo {
+        font-size: 1.6em;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 8px 15px;
+    }
+
+    .logotext {
+        top: 35%;
+        left: 30%;
+        font-size: 2.5em;
+        transform: translate(-50%, -50%);
+        white-space: nowrap;
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 5px 10px;
+    }
+
+    .logotext {
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2em;
+        text-align: center;
+        white-space: normal;
+        width: 90%;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .booking-form {
+        padding: 25px;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .section-header p {
+        font-size: 1rem;
+    }
+    
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+    
     .section {
         padding: 30px 20px;
     }
@@ -767,6 +691,22 @@ h1, h2 {
     .service-type, .service-options, .laundry-options, .not-provided-list {
         grid-template-columns: 1fr;
     }
+}
+
+@media (max-width: 576px) {
+    .booking-form {
+        padding: 25px;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .section-header p {
+        font-size: 1rem;
+    }
     
     .checkbox-group {
-        grid-template-columns: 1fr; */
+        grid-template-columns: 1fr;
+    }
+}
