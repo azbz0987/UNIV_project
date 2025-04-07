@@ -364,12 +364,18 @@ h2 {
 
 /* 푸터 스타일 */
 .footer {
+    height: 126.4px;
     text-align: center;
     padding: 20px;
     font-size: 0.9em;
     color: #666;
     background: #F2F2F2;
 }
+.footer p{
+    height: 21.6px;
+    margin: 14px;
+}
+
 /* 반응형 디자인 */
 @media (max-width: 768px) {
     header {
