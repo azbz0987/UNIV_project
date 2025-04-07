@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // 추가 서비스 선택 클릭 이벤트
-    const additionalOptions = document.querySelectorAll('#section3 .option-card');
+    const additionalOptions = document.querySelectorAll('#section3 .extra-card');
     additionalOptions.forEach(option => {
         option.addEventListener('click', function() {
             // 현재 선택된 옵션 토글
