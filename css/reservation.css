@@ -372,6 +372,25 @@ h1, h2 {
       width: 100%;
       max-width: 300px;
     }
+=======
+.extra-card{
+    background-color: white;
+    color: #333;
+    padding: 20px;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #A4D8F4;
+}
+
+.extra-card:hover {
+    background-color: #92cde3;
+    transform: translateY(-5px);
+>>>>>>> afa7b0be7e61ad80f433508ce5a2fb285e301c05
 }
 
 /* 푸터 */
