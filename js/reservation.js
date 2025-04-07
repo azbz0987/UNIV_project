@@ -181,3 +181,73 @@ styleElement.textContent = `
     }
 `;
 document.head.appendChild(styleElement);
+
+// 서비스 유형별 옵션 선택 기능 //
+document.addEventListener('DOMContentLoaded', function() {
+    // 서비스 유형 선택 필드
+    const serviceTypeSelect = document.getElementById('service-type');
+    
+    // 추가 옵션 컨테이너
+    const regularOptions = document.getElementById('regular-options');
+    const areaOptions = document.getElementById('area-options');
+    
+    // 서비스 유형 변경 이벤트 리스너
+    if (serviceTypeSelect) {
+        serviceTypeSelect.addEventListener('change', function() {
+            // 모든 추가 옵션 숨기기
+            regularOptions.style.display = 'none';
+            areaOptions.style.display = 'none';
+            
+            // 선택한 서비스 유형에 따라 해당 옵션 표시
+            const selectedValue = this.value;
+            
+            if (selectedValue === 'regular') {
+                // 정기 청소 선택 시
+                regularOptions.style.display = 'block';
+                
+                // 청소 간격 필드를 필수로 설정
+                const intervalSelect = document.getElementById('cleaning-interval');
+                if (intervalSelect) intervalSelect.required = true;
+                
+            } else if (selectedValue === 'area') {
+                // 구역 청소 선택 시
+                areaOptions.style.display = 'block';
+                
+                // 하나 이상의 체크박스가 선택되었는지 확인하는 유효성 검사는
+                // 폼 제출 시 별도로 처리해야 합니다.
+            }
+            
+            // 애니메이션 효과를 위한 스타일 추가 (선택 사항)
+            if (selectedValue === 'regular' || selectedValue === 'area') {
+                // 슬라이드 다운 애니메이션 효과 (CSS 트랜지션으로 구현 가능)
+                const visibleOptions = selectedValue === 'regular' ? regularOptions : areaOptions;
+                visibleOptions.style.opacity = '0';
+                visibleOptions.style.maxHeight = '0';
+                
+                // 요소가 DOM에 추가된 후 애니메이션 적용
+                setTimeout(() => {
+                    visibleOptions.style.transition = 'opacity 0.3s ease, max-height 0.5s ease';
+                    visibleOptions.style.opacity = '1';
+                    visibleOptions.style.maxHeight = '500px'; // 충분히 큰 값
+                }, 10);
+            }
+        });
+    }
+});
+
+// 폼 제출 시 유효성 검사
+const bookingForm = document.getElementById('booking-form');
+if (bookingForm) {
+    bookingForm.addEventListener('submit', function(event) {
+        const serviceType = document.getElementById('service-type').value;
+        
+        // 구역 청소를 선택했는데 아무 구역도 선택하지 않은 경우
+        if (serviceType === 'area') {
+            const areaCheckboxes = document.querySelectorAll('input[name="area"]:checked');
+            if (areaCheckboxes.length === 0) {
+                event.preventDefault(); // 폼 제출 중지
+                alert('최소 하나 이상의 청소 구역을 선택해주세요.');
+            }
+        }
+    });
+}

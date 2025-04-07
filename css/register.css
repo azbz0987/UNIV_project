@@ -15,6 +15,9 @@ body {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    left: 0; 
+    transform: translateX(0); 
 }
 
 /* 로고 스타일 */
@@ -195,6 +198,7 @@ body {
     font-size: 20px;
     color: white;
     transition: transform 0.3s;
+    text-decoration: none;
 }
 
 .social-icon:hover {
@@ -243,11 +247,13 @@ body {
     display: flex;
     gap: 10px;
     margin-bottom: 10px;
+    width: 100%;
 }
 
 .zipcode-group input {
     flex: 1;
     margin-bottom: 0;
+    width: auto;
 }
 
 .zipcode-btn {
@@ -277,4 +283,13 @@ body {
     margin-top: 20px;
     margin-bottom: 15px;
     color: #333;
+}
+
+.input-group input,
+.address-input input,
+#zipcode,
+#address,
+#addressDetail {
+    box-sizing: border-box; 
+    width: 100%; 
 }
