@@ -60,14 +60,14 @@
         </section>
         
         <section id="section2" class="section" style="background-color: #F2F2F2;">
-            <h2 id="size">구역 청소</h2>
-            <p id="size2">원하는 구역을 선택해 청소</p>
+            <h2 id="size">가정 특성 맞춤 서비스</h2>
+            <p id="size2">맞춤형 청소 서비스를 제공해드립니다.</p>
             <div class="service-options">
-                <div class="option-card">거실</div>
-                <div class="option-card">주방</div>
-                <div class="option-card">화장실</div>
-                <div class="option-card">현관</div>
-                <div class="option-card">베란다</div>
+                <div class="option-card">고령자 가구</div>
+                <div class="option-card">다자녀 가정</div>
+                <div class="option-card">반려동물 가정</div>
+                <div class="option-card">맞벌이 부부 가정</div>
+                <div class="option-card">1인 가구 / 자취생</div>
             </div>
         </section>
         
@@ -123,6 +123,7 @@
                 </div>
                 
                 <form id="booking-form" class="booking-form">
+                    <!-- 서비스 유형 선택 필드 (기존 코드) -->
                     <div class="form-group">
                         <label for="service-type">서비스 유형</label>
                         <select id="service-type" name="service-type" required>
@@ -132,6 +133,55 @@
                             <option value="area">구역 청소</option>
                         </select>
                         <div class="icon-select"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+
+                    <!-- 정기 청소 선택 시 표시될 간격 선택 옵션 -->
+                    <div class="form-group" id="regular-options" style="display: none;">
+                        <label for="cleaning-interval">청소 간격 선택</label>
+                        <select id="cleaning-interval" name="cleaning-interval">
+                            <option value="" disabled selected>간격 선택</option>
+                            <option value="weekly">1주</option>
+                            <option value="biweekly">2주</option>
+                            <option value="monthly">한 달</option>
+                        </select>
+                        <div class="icon-select"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+
+                    <!-- 구역 청소 선택 시 표시될 구역 선택 옵션 -->
+                    <div class="form-group" id="area-options" style="display: none;">
+                        <label>구역 청소 선택</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="area" value="living">
+                                <span class="checkmark"></span>
+                                <span>거실</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="area" value="kitchen">
+                                <span class="checkmark"></span>
+                                <span>주방</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="area" value="bathroom">
+                                <span class="checkmark"></span>
+                                <span>화장실</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="area" value="entrance">
+                                <span class="checkmark"></span>
+                                <span>현관</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="area" value="balcony">
+                                <span class="checkmark"></span>
+                                <span>베란다</span>
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="area" value="room">
+                                <span class="checkmark"></span>
+                                <span>방</span>
+                            </label>
+                        </div>
                     </div>
                     
                     <div class="form-row">

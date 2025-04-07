@@ -631,6 +631,24 @@ h1, h2 {
     font-weight: bold;
 }
 
+/* 동적 옵션 애니메이션 효과 */
+#regular-options, #area-options {
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.5s ease;
+    opacity: 0;
+    max-height: 0;
+}
+
+#regular-options.visible, #area-options.visible {
+    opacity: 1;
+    max-height: 500px; /* 충분히 큰 값 */
+}
+
+/* 구역 선택 체크박스 그룹 스타일 보완 */
+#area-options .checkbox-group {
+    margin-top: 15px;
+}
+
 /* FAQ 스타일 */
 .faq-container {
     max-width: 800px;
