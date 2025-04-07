@@ -62,12 +62,63 @@
         <section id="section2" class="section" style="background-color: #F2F2F2;">
             <h2 id="size">가정 특성 맞춤 서비스</h2>
             <p id="size2">맞춤형 청소 서비스를 제공해드립니다.</p>
-            <div class="service-options">
-                <div class="option-card">고령자 가구</div>
-                <div class="option-card">다자녀 가정</div>
-                <div class="option-card">반려동물 가정</div>
-                <div class="option-card">맞벌이 부부 가정</div>
-                <div class="option-card">1인 가구 / 자취생</div>
+            <div class="ss-service-options">
+                <div class="s-option-card" onclick="showService('elderly')">고령자 가구</div>
+                <div class="s-option-card" onclick="showService('children')">다자녀 가정</div>
+                <div class="s-option-card" onclick="showService('pets')">반려동물 가정</div>
+                <div class="s-option-card" onclick="showService('working')">맞벌이 부부 가정</div>
+                <div class="s-option-card" onclick="showService('single')">1인 가구 / 자취생</div>
+            </div>
+
+            <div class="service-details-container">
+                <!-- 고령자 가구 서비스 -->
+                <div id="elderly-service" class="service-detail">
+                  <h3>고령자 가구 대상 서비스</h3>
+                  <ul>
+                    <li><strong>고령자 친화 청소</strong> : 낮은 위치 위주, 욕실 미끄럼방지 패드 점검 등</li>
+                    <li><strong>소통 간소화 모드</strong> : 전화나 문자 알림 위주 안내</li>
+                    <li><strong>약 복용 시간 확인 알림 기능</strong> : 청소 중 알림 선택 추가로 가능(옵션 추가 선택에 존재)</li>
+                  </ul>
+                </div>
+
+                <!-- 다자녀 가정 서비스 -->
+                <div id="children-service" class="service-detail">
+                    <h3>다자녀 가정 대상 서비스</h3>
+                    <ul>
+                    <li><strong>장난감 정리 서비스</strong></li>
+                    <li><strong>유아용품 세척/소독 서비스</strong> : 젖병, 유아 식기 등 전문 세척 요청 가능</li>
+                    <li><strong>유아 공간 안전 정리</strong> : 모서리 보호대 점검, 위험물 수거</li>
+                    </ul>
+                </div>
+
+                <!-- 반려동물 가정 서비스 -->
+                <div id="pets-service" class="service-detail">
+                    <h3>반려동물 가정 대상 서비스</h3>
+                    <ul>
+                    <li><strong>털 제거 집중 청소 서비스</strong> : 침구, 소파, 환기 필터 중심 청소</li>
+                    <li><strong>배변 패드 교체 및 반려동물 용품 정리</strong></li>
+                    <li><strong>동물과 친화적인 헬퍼 매칭</strong> : 반려동물 무서워하지 않는 헬퍼 우선 배정</li>
+                    </ul>
+                </div>
+
+                <!-- 맞벌이 부부 가정 서비스 -->
+                <div id="working-service" class="service-detail">
+                    <h3>맞벌이 부부 가정 대상 서비스</h3>
+                    <ul>
+                    <li><strong>출근한 사이에 청소 서비스</strong> : 퇴근하면 깔끔한 집!</li>
+                    <li><strong>정기 청소 + 세탁 정리 묶음 패키지 제공</strong></li>
+                    </ul>
+                </div>
+
+                <!-- 1인 가구 서비스 -->
+                <div id="single-service" class="service-detail">
+                    <h3>1인 가구 / 자취생 대상 서비스</h3>
+                    <ul>
+                    <li><strong>냉장고 정리 + 음식물 쓰레기 처리</strong></li>
+                    <li><strong>방 청소 + 빨래 개기 서비스</strong></li>
+                    <li><strong>물건에 대한 정리 기준 제공</strong>(버릴지 말지)</li>
+                    </ul>
+                </div>
             </div>
         </section>
         

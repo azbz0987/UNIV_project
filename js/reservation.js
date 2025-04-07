@@ -39,6 +39,38 @@ function toggleMenu() {
     navUl.classList.toggle("show");
 }
 
+    // 서비스 상세 정보 표시 함수
+    function showService(serviceType) {
+        // 모든 서비스 카드 숨기기
+        const allServices = document.querySelectorAll('.service-detail');
+        allServices.forEach(service => {
+          service.classList.remove('active');
+        });
+        
+        // 선택된 카드만 표시
+        const selectedService = document.getElementById(serviceType + '-service');
+        if (selectedService) {
+          selectedService.classList.add('active');
+        }
+        
+        // 옵션 카드 활성화 상태 변경
+        const allOptions = document.querySelectorAll('.s-option-card');
+        allOptions.forEach(option => {
+          option.classList.remove('active');
+        });
+        
+        // 클릭한 옵션 카드 활성화
+        event.currentTarget.classList.add('active');
+      }
+      
+      // 페이지 로드 시 첫 번째 서비스 표시
+      window.onload = function() {
+        const firstOption = document.querySelector('.s-option-card');
+        if (firstOption) {
+          firstOption.click();
+        }
+      };
+
 // 예약 폼 기능
 document.addEventListener('DOMContentLoaded', function() {
     // 서비스 카드 클릭 이벤트 처리
