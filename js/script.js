@@ -260,3 +260,47 @@ document.addEventListener('DOMContentLoaded', function() {
     // 로그인 상태 확인 및 UI 업데이트
     checkLoginStatus();
 });
+
+// 스크롤 시 헤더 배경색 변경
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 10) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+// 섹션 스크롤 기능
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        window.scrollTo({
+            top: section.offsetTop - 80,
+            behavior: 'smooth'
+        });
+    }
+}
+
+// 스크롤 이벤트 리스너
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        scrollToSection(targetId);
+    });
+});
+
+// 옵션 카드 이벤트 리스너
+document.querySelectorAll('.option-card').forEach(card => {
+    card.addEventListener('click', function() {
+        this.classList.toggle('selected');
+    });
+});
+
+// 연락처 폼 제출 이벤트
+document.querySelector('.contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('문의가 성공적으로 접수되었습니다. 빠른 시일 내에 답변 드리겠습니다.');
+    this.reset();
+});

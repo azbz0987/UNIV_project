@@ -339,27 +339,6 @@ h2 {
     line-height: 1.8;
 }
 
-/* 문의 폼 스타일 */
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-form input,
-.contact-form textarea {
-    margin-bottom: 15px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.contact-form textarea {
-    height: 150px;
-    resize: vertical;
-}
 
 
 /* 푸터 스타일 */
