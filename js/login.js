@@ -44,18 +44,18 @@ document.querySelector('.forgot-password').addEventListener('click', function(e)
 const socialLoginConfig = {
     kakao: {
         clientId: 'eb31f1aa06b7c681b90bd683dd14d439', // 발급받은 REST API 키
-        redirectUri: 'https://clean4u.r-e.kr/oauth/callback?provider=kakao',
+        redirectUri: 'http://localhost:5500/oauth/callback/callback.html?provider=kakao',
         authUrl: 'https://kauth.kakao.com/oauth/authorize'
     },
     naver: {
         clientId: 'yWFqynV5khawkoFw5L36',   // 발급받은 클라이언트 ID
-        redirectUri: 'https://clean4u.r-e.kr/oauth/callback?provider=naver',
+        redirectUri: 'http://localhost:5500/oauth/callback/callback.html?provider=naver',
         authUrl: 'https://nid.naver.com/oauth2.0/authorize',
         state: Math.random().toString(36).substring(2)
     },
     google: {
         clientId: '248080204580-l8sb8c8n5rpp6fad2rjmidpb7riv5igj.apps.googleusercontent.com', // 발급받은 클라이언트 ID
-        redirectUri: 'https://clean4u.r-e.kr/oauth/callback?provider=google',
+        redirectUri: 'http://localhost:5500/oauth/callback/callback.html?provider=google',
         authUrl: 'https://accounts.google.com/o/oauth2/v2/auth',
         scope: 'email profile'
     }
